@@ -24,7 +24,8 @@ Last, create an `nginx-proxy-gen` container, passing the container ID or name
 of the proxy, the volumes from the first container, and the host docker.sock:
 
     $ docker run -d -e NGINX_CONTAINER=proxy --volumes-from proxy-conf \
-        -v /var/run/docker.sock:/tmp/docker.sock synctree/nginx-proxy-gen
+        -v /var/run/docker.sock:/tmp/docker.sock --name proxy-gen \
+        synctree/nginx-proxy-gen
 
 ## Usage
 
