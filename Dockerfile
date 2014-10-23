@@ -6,5 +6,8 @@ WORKDIR /app
 ADD proxy-gen.sh /app/
 ADD nginx-proxy/nginx.tmpl /app/
 
-ENTRYPOINT []
+# XXX: Work around https://github.com/docker/docker/issues/8732
+ENTRYPOINT ["bash", "-c"]
+#ENTRYPOINT []
+
 CMD ["/app/proxy-gen.sh"]
