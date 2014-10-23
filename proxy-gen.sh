@@ -10,4 +10,6 @@ if ! mountpoint -q /etc/nginx/conf.d; then
   exit 1
 fi
 
+cp /app/conf.d/*.conf /etc/nginx/conf.d/
+
 exec docker-gen -notify-sighup "$NGINX_CONTAINER" -watch -only-exposed /app/nginx.tmpl /etc/nginx/conf.d/default.conf

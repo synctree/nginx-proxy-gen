@@ -5,6 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 ADD proxy-gen.sh /app/
 ADD nginx-proxy/nginx.tmpl /app/
+ADD conf.d /app/conf.d
 
 # XXX: Work around https://github.com/docker/docker/issues/8732
 ENTRYPOINT ["bash", "-c"]
