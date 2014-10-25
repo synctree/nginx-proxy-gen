@@ -2,7 +2,7 @@
 
 The `nginx-proxy-gen` image uses [`docker-gen`](https://github.com/jwilder/docker-gen.git) to generate reverse proxy configs
 for nginx based on the Docker event stream. It assumes a separate container
-running nginx and a shared `/etc/nginx/conf.d` directory between the two
+running [`nginx`](https://registry.hub.docker.com/_/nginx) and a shared `/etc/nginx/conf.d` directory between the two
 containers.
 
 ## Setup
